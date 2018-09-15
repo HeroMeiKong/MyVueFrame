@@ -1,11 +1,11 @@
 import Vue from 'vue'
-import vm from './vm'
+import Button from './button'
 import Icon from './icon'
-import vmGroup from './vm-group'
+import ButtonGroup from './button-group'
 
-Vue.component('g-vm', vm)
+Vue.component('g-button', Button)
 Vue.component('g-icon', Icon)
-Vue.component('g-vm-group', vmGroup)
+Vue.component('g-button-group', ButtonGroup)
 new Vue({
     el: '#app',
     data: {
@@ -19,20 +19,20 @@ import chai from 'chai'
 
 const expect = chai.expect
 {
-    const Constructor = Vue.extend(vm)
+    const Constructor = Vue.extend(Button)
     const vm = new Constructor({
         propsData: {
             icon: 'set'
         }
     })
-    vm.$mount('#test')//vm.$mount()也行
+    vm.$mount('#test')//button.$mount()也行
     let useElement = vm.$el.querySelector('use')
     expect(useElement.getAttribute('xlink:href')).to.eq('#i-set')
     vm.$el.remove()
     vm.$destroy()
 }
 {
-    const Constructor = Vue.extend(vm)
+    const Constructor = Vue.extend(Button)
     const vm = new Constructor({
         propsData: {
             icon: 'set',
@@ -48,7 +48,7 @@ const expect = chai.expect
 {
     const div = document.createElement('div')
     document.body.appendChild(div)
-    const Constructor = Vue.extend(vm)
+    const Constructor = Vue.extend(Button)
     const vm = new Constructor({
         propsData: {
             icon: 'set',
@@ -64,7 +64,7 @@ const expect = chai.expect
 {
     const div = document.createElement('div')
     document.body.appendChild(div)
-    const Constructor = Vue.extend(vm)
+    const Constructor = Vue.extend(Button)
     const vm = new Constructor({
         propsData: {
             icon: 'set',
@@ -79,18 +79,16 @@ const expect = chai.expect
     vm.$destroy()
 }
 {
-    const Constructor = Vue.extend(vm)
-    const gvm = new Constructor({
+    const Constructor = Vue.extend(Button)
+    const gButton = new Constructor({
         propsData: {
             icon: 'set'
         }
     })
-    gvm.$mount()
-    gvm.$on('click', function () {
+    gButton.$mount()
+    gButton.$on('click', function () {
         console.log(1)
     })
-    let vm = gvm.$el
+    let vm = gButton.$el
     vm.click()
-    vm.$el.remove()
-    vm.$destroy()
 }
