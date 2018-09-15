@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/HeroMeiKong/MyVueFrame/issues"
   },
-  "homepage": "https://github.com/HeroMeiKong/MyVueFrame#readme"
+  "homepage": "https://github.com/HeroMeiKong/MyVueFrame#readme",
+  "dependencies": {
+    "vue": "^2.5.17"
+  }
 }
