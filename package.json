@@ -1,8 +1,8 @@
 {
   "name": "soulwalker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This is a UI frame",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "dev-test-linux": "parcel watch test/*  & karma start",
     "dev-test": "parcel watch test/*",
