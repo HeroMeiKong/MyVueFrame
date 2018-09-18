@@ -7,12 +7,17 @@ import Input from './input'
 Vue.component('g-button', Button)
 Vue.component('g-icon', Icon)
 Vue.component('g-button-group', ButtonGroup)
-Vue.component('g-input',Input)
+Vue.component('g-input', Input)
 new Vue({
     el: '#app',
     data: {
         loading1: false,
         loading2: false,
         loading3: false
+    },
+    methods: {
+        inputChange(e) {
+            console.log(e.target.value)
+        }
     }
 })

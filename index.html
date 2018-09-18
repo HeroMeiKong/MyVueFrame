@@ -23,13 +23,24 @@
             --border-color: #999;
             --border-color-hover: #666;
         }
+        .box{
+            margin: 20px;
+        }
     </style>
 </head>
 <body>
 <div id="app">
-    <g-input value="HeroMeiKong" disabled></g-input>
-    <g-input value="SoulWalker" readonly></g-input>
-    <g-input value="SoulWalker" error="sss"></g-input>
+    <div class="box">
+        <g-input value="HeroMeiKong" disabled></g-input>
+        <g-input value="SoulWalker" readonly></g-input>
+        <g-input value="SoulWalker"></g-input>
+    </div>
+    <div class="box">
+        <g-input value="SoulWalker" @change="inputChange"></g-input>
+    </div>
+    <div class="box">
+        <g-input value="SoulWalker" error="姓名不能少于2个字"></g-input>
+    </div>
     <g-button :loading="loading1" @click="loading1=!loading1">
         按钮
     </g-button>
