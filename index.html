@@ -12,7 +12,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        img{max-width: 100%;}
         :root {
             --button-height: 32px;
             --font-size: 14px;
@@ -23,7 +23,8 @@
             --border-color: #999;
             --border-color-hover: #666;
         }
-        .box{
+
+        .box {
             margin: 20px;
         }
     </style>
@@ -64,7 +65,7 @@
         <g-input value="SoulWalker"></g-input>
     </div>
     <div class="box">
-        <g-input  v-model="message"></g-input>
+        <g-input v-model="message"></g-input>
         <p>{{message}}</p>
     </div>
     <div class="box">
