@@ -24,14 +24,36 @@
             --border-color-hover: #666;
         }
 
-        .box {
-            margin: 20px;
+        .demo{
+            background: grey;
+            border: 1px solid red;
+            height: 100px;
         }
     </style>
 </head>
 <body>
 <div id="app">
-    <div style="border: 1px solid red;">
+    <g-row>
+        <g-col span="24" :sm="{span:12}" :md="{span:8}" :lg="{span:6}" :xl="{span:3}" :xxl="{span:2}">
+            <div class="demo"></div>
+        </g-col>
+        <g-col span="24" :sm="{span:12}" :md="{span:8}" :lg="{span:6}" :xl="{span:3}" :xxl="{span:2}">
+            <div class="demo"></div>
+        </g-col>
+        <g-col span="24" :sm="{span:12}" :md="{span:8}" :lg="{span:6}" :xl="{span:3}" :xxl="{span:2}">
+            <div class="demo"></div>
+        </g-col>
+        <g-col span="24" :sm="{span:12}" :md="{span:8}" :lg="{span:6}" :xl="{span:3}" :xxl="{span:2}">
+            <div class="demo"></div>
+        </g-col>
+        <g-col span="24" :sm="{span:12}" :md="{span:8}" :lg="{span:6}" :xl="{span:3}" :xxl="{span:2}">
+            <div class="demo"></div>
+        </g-col>
+        <g-col span="24" :sm="{span:12}" :md="{span:8}" :lg="{span:6}" :xl="{span:3}" :xxl="{span:2}">
+            <div class="demo"></div>
+        </g-col>
+    </g-row>
+    <!--<div style="border: 1px solid red;">
         <g-row gutter="20">
             <g-col span="12"
                    :sm="{span:10}"
@@ -107,7 +129,7 @@
         <g-button>more</g-button>
         <g-button icon="next" icon-position="right">下一页</g-button>
     </g-button-group>
-    <div id="test"></div>
+    <div id="test"></div>-->
 </div>
 <script src="./src/app.js"></script>
 </body>

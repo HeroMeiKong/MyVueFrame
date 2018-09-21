@@ -60,7 +60,7 @@
                 margin-left: ($n/24) * 100%;
             }
         }
-        @media(min-width: 576px) and (max-width: 767px) {
+        @media(min-width: 576px){
             $class-prefix: col-sm-;
             @for $n from 1 through 24 {
                 &.#{$class-prefix}#{$n} {
@@ -74,7 +74,7 @@
                 }
             }
         }
-        @media(min-width: 768px) and (max-width: 991px) {
+        @media(min-width: 768px){
             $class-prefix: col-md-;
             @for $n from 1 through 24 {
                 &.#{$class-prefix}#{$n} {
@@ -88,7 +88,7 @@
                 }
             }
         }
-        @media(min-width: 992px) and (max-width: 1199px) {
+        @media(min-width: 992px){
             $class-prefix: col-lg-;
             @for $n from 1 through 24 {
                 &.#{$class-prefix}#{$n} {
@@ -102,7 +102,7 @@
                 }
             }
         }
-        @media(min-width: 1200px) and (max-width: 1599px) {
+        @media(min-width: 1200px){
             $class-prefix: col-xl-;
             @for $n from 1 through 24 {
                 &.#{$class-prefix}#{$n} {
