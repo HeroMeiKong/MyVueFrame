@@ -25,15 +25,25 @@
         }
 
         .demo{
-            background: grey;
             border: 1px solid red;
-            height: 100px;
+            min-height: 100px;
         }
     </style>
 </head>
 <body>
 <div id="app">
-    <g-row>
+    <g-layout style="height: 100vh">
+        <g-sider class="demo">sider</g-sider>
+        <g-layout>
+            <g-header class="demo">header</g-header>
+            <g-layout>
+                <g-sider class="demo">sider</g-sider>
+                <g-content class="demo">content</g-content>
+            </g-layout>
+            <g-footer class="demo">footer</g-footer>
+        </g-layout>
+    </g-layout>
+    <!--<g-row>
         <g-col span="24" :sm="{span:12}" :md="{span:8}" :lg="{span:6}" :xl="{span:3}" :xxl="{span:2}">
             <div class="demo"></div>
         </g-col>
@@ -52,7 +62,7 @@
         <g-col span="24" :sm="{span:12}" :md="{span:8}" :lg="{span:6}" :xl="{span:3}" :xxl="{span:2}">
             <div class="demo"></div>
         </g-col>
-    </g-row>
+    </g-row>-->
     <!--<div style="border: 1px solid red;">
         <g-row gutter="20">
             <g-col span="12"
