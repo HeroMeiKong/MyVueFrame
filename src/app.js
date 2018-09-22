@@ -42,6 +42,10 @@ new Vue({
     methods: {
         showToast() {
             this.$toast('一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一', {
+                position: 'top',
+                enableHtml: false,
+                autoClose: false,
+                autoCloseDelay: 3,
                 closeButton: {
                     text: '关闭',
                     callback(toast){

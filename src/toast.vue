@@ -1,5 +1,5 @@
 <template>
-    <div class="toast" ref="toast">
+    <div class="toast" ref="toast" :class="toastClasses">
         <div class="pad">
             <slot v-if="!enableHtml"></slot>
             <div v-else v-html="$slots.default[0]"></div>
@@ -33,19 +33,31 @@
             enableHtml: {
                 type: Boolean,
                 default: false
+            },
+            position: {
+                type: String,
+                default: 'top',
+                validator(value) {
+                    return ['top', 'middle', 'bottom'].indexOf(value) >= 0
+                }
             }
         },
         mounted() {
             this.updateStyles()
             this.execAutoClose()
         },
+        computed: {
+            toastClasses() {
+                return {[`position-${this.position}`]: true}
+            }
+        },
         methods: {
-            updateStyles(){
+            updateStyles() {
                 this.$nextTick(() => {
                     this.$refs.line.style.height = `${this.$refs.toast.getBoundingClientRect().height}px`
                 })
             },
-            execAutoClose(){
+            execAutoClose() {
                 if (this.autoClose) {
                     setTimeout(() => {
                         this.close()
@@ -75,7 +87,6 @@
     .toast {
         position: fixed;
         left: 50%;
-        top: 0;
         transform: translateX(-50%);
         display: flex;
         align-items: center;
@@ -87,16 +98,26 @@
         box-shadow: 0 0 3px 0 rgba(0, 0, 0, .5);
         color: white;
         padding: 0 16px;
-    }
-    .pad{
-        padding: 8px 0;
-    }
-    .close {
-        padding-left: 16px;
-        flex-shrink: 0;
-    }
-    .line {
-        border: 1px solid #666;
-        margin-left: 16px;
+        .pad {
+            padding: 8px 0;
+        }
+        .close {
+            padding-left: 16px;
+            flex-shrink: 0;
+        }
+        .line {
+            border: 1px solid #666;
+            margin-left: 16px;
+        }
+        &.position-top{
+            top: 0;
+        }
+        &.position-middle{
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+        &.position-bottom{
+            bottom: 0;
+        }
     }
 </style>
