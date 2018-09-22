@@ -41,7 +41,15 @@ new Vue({
     },
     methods: {
         showToast() {
-            this.$toast('www')
+            this.$toast('一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一', {
+                closeButton: {
+                    text: '关闭',
+                    callback(toast){
+                        toast.log()
+                        console.log('用户说他知道了')
+                    }
+                }
+            })
         }
     }
 })
