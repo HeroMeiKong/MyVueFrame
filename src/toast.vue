@@ -1,7 +1,9 @@
 <template>
     <div class="toast" ref="toast">
-        <slot v-if="!enableHtml"></slot>
-        <div v-else v-html="$slots.default[0]"></div>
+        <div class="pad">
+            <slot v-if="!enableHtml"></slot>
+            <div v-else v-html="$slots.default[0]"></div>
+        </div>
         <div class="line" ref="line"></div>
         <span class="close" v-if="closeButton" @click="onClickClose">
             {{closeButton.text}}
@@ -34,16 +36,22 @@
             }
         },
         mounted() {
-            if (this.autoClose) {
-                setTimeout(() => {
-                    this.close()
-                }, this.autoCloseDelay * 1000)
-            }
-            this.$nextTick(() => {
-                this.$refs.line.style.height = `${this.$refs.toast.getBoundingClientRect().height}px`
-            })
+            this.updateStyles()
+            this.execAutoClose()
         },
         methods: {
+            updateStyles(){
+                this.$nextTick(() => {
+                    this.$refs.line.style.height = `${this.$refs.toast.getBoundingClientRect().height}px`
+                })
+            },
+            execAutoClose(){
+                if (this.autoClose) {
+                    setTimeout(() => {
+                        this.close()
+                    }, this.autoCloseDelay * 1000)
+                }
+            },
             close() {
                 this.$el.remove()
                 this.$destroy()
@@ -80,12 +88,13 @@
         color: white;
         padding: 0 16px;
     }
-
+    .pad{
+        padding: 8px 0;
+    }
     .close {
         padding-left: 16px;
         flex-shrink: 0;
     }
-
     .line {
         border: 1px solid #666;
         margin-left: 16px;
