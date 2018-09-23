@@ -17,35 +17,39 @@
         },
         methods: {
             positionContent() {
-                if(this.$refs.contentWrapper) {
+                if (this.$refs.contentWrapper) {
                     document.body.appendChild(this.$refs.contentWrapper)
                     let {top, left} = this.$refs.triggerWrapper.getBoundingClientRect()
                     this.$refs.contentWrapper.style.left = left + window.scrollX + 'px'
                     this.$refs.contentWrapper.style.top = top + window.scrollY + 'px'
-                }else{
+                } else {
                     console.log('ref="contentWrapper"不存在')
                 }
             },
-            listenToDocument() {
-                let eventHandler = (e) => {
-                    if (!this.$refs.contentWrapper.contains(e.target)) {
-                        this.visible = false
-                        document.removeEventListener('click', eventHandler)
-                    }
+            onClickDocument(e) {
+                if (this.$refs.contentWrapper && (this.$refs.contentWrapper === e.target || this.$refs.contentWrapper.contains(e.target))) {
+
+                } else {
+                    this.close()
                 }
-                document.addEventListener('click', eventHandler)
             },
-            onShow(){
+            open() {
+                this.visible = true
                 this.$nextTick(() => {
                     this.positionContent()
-                    this.listenToDocument()
+                    document.addEventListener('click', this.onClickDocument)
                 })
+            },
+            close() {
+                this.visible = false
+                document.removeEventListener('click', this.onClickDocument)
             },
             onClick(event) {
                 if (this.$refs.triggerWrapper.contains(event.target)) {
-                    this.visible = !this.visible
                     if (this.visible === true) {
-                        this.onShow()
+                        this.close()
+                    } else {
+                        this.open()
                     }
                 }
             }
@@ -54,6 +58,8 @@
 </script>
 
 <style scoped lang="scss">
+    $border-color: #333;
+    $border-radius: 4px;
     .popover {
         display: inline-block;
         vertical-align: top;
@@ -62,7 +68,31 @@
 
     .content-wrapper {
         position: absolute;
-        box-shadow: 0 0 3px rgba(0, 0, 0, .5);
-        transform: translateY(-100%);
+        border: 1px solid $border-color;
+        border-radius: $border-radius;
+        //box-shadow: 0 0 3px rgba(0, 0, 0, .5);
+        filter: drop-shadow(0 1px 1px rgba(0,0,0,.5));
+        background: white;
+        transform: translateY(-150%);
+        padding: .5em 1em;
+        max-width: 20em;
+        word-break: break-all;
+        &::before,&::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            position: absolute;
+            left: 10px;
+        }
+        &::before{
+            border-top-color: $border-color;
+            top: 100%;
+        }
+        &::after {
+            border-top-color: white;
+            top: calc(100% - 1px);
+        }
     }
 </style>
