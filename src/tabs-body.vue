@@ -5,7 +5,10 @@
 </template>
 <script>
     export default {
-        name: 'SoulWalkerTabsBody'
+        name: 'SoulWalkerTabsBody',
+        inject: ['eventBus'],
+        created(){
+        }
     }
 </script>
 <style lang="scss" scoped>

@@ -6,7 +6,10 @@
 </template>
 <script>
     export default {
-        name: 'SoulWalkerTabsHead'
+        name: 'SoulWalkerTabsHead',
+        inject: ['eventBus'],
+        created(){
+        }
     }
 </script>
 <style lang="scss" scoped>
