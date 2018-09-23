@@ -16,7 +16,7 @@ describe('Toast', () => {
             const Constructor = Vue.extend(Toast)
             const vm = new Constructor({
                 propsData: {
-                    autoClose: 3,
+                    autoClose: 1,
                 }
             }).$mount(div)
             vm.$on('close', () => {
@@ -24,7 +24,7 @@ describe('Toast', () => {
                 done()
             })
         })
-        it('接受closeButton', () => {
+        it('接受closeButton', (done) => {
             const callback = sinon.fake()
             const Constructor = Vue.extend(Toast)
             const vm = new Constructor({
@@ -37,8 +37,11 @@ describe('Toast', () => {
             }).$mount()
             let closeButton = vm.$el.querySelector('.close')
             expect(closeButton.textContent.trim()).to.eq('close')
-            closeButton.click()
-            expect(callback).to.have.been.called
+            setTimeout(()=>{
+                closeButton.click()
+                expect(callback).to.have.been.called
+                done()
+            },200)
         })
         it('接受enableHtml', () => {
             const Constructor = Vue.extend(Toast)
