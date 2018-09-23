@@ -22,8 +22,8 @@
                     this.$nextTick(() => {
                         document.body.appendChild(this.$refs.contentWrapper)
                         let {top, left} = this.$refs.triggerWrapper.getBoundingClientRect()
-                        this.$refs.contentWrapper.style.left = left+'px'
-                        this.$refs.contentWrapper.style.top = top+'px'
+                        this.$refs.contentWrapper.style.left = left + window.scrollX + 'px'
+                        this.$refs.contentWrapper.style.top = top + window.scrollY + 'px'
                         let eventHandler = () => {
                             this.visible = false
                             document.removeEventListener('click', eventHandler)
@@ -43,8 +43,8 @@
         display: inline-block;
         vertical-align: top;
         position: relative;
-
     }
+
     .content-wrapper {
         position: absolute;
         box-shadow: 0 0 3px rgba(0, 0, 0, .5);
