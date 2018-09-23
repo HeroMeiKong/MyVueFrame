@@ -32,8 +32,9 @@
 </script>
 <style lang="scss" scoped>
     .tabs-pane {
+        padding: 10px;
         &.active {
-            background: red;
+
         }
     }
 </style>
