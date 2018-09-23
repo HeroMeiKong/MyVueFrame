@@ -5,6 +5,7 @@
 </template>
 <script>
     import Vue from 'vue'
+
     export default {
         name: 'SoulWalkerTabs',
         props: {
@@ -20,13 +21,26 @@
                 }
             }
         },
-        data(){ return {eventBus: new Vue()} },
-        provide(){ return {eventBus: this.eventBus}},
+        data() {
+            return {eventBus: new Vue()}
+        },
+        provide() {
+            return {eventBus: this.eventBus}
+        },
         created() {
             //this.$emit('update:selected', 'xxx')
         },
-        mounted(){
-            this.eventBus.$emit('update:selected', this.selected)
+        mounted() {
+            this.$children.forEach((vm) => {
+                if (vm.$options.name === 'SoulWalkerTabsHead') {
+                    vm.$children.forEach((childVm) => {
+                        if(childVm.$options.name === 'SoulWalkerTabsItem' && childVm.name === this.selected)
+                        {
+                            this.eventBus.$emit('update:selected', this.selected, childVm)
+                        }
+                    })
+                }
+            })
         }
     }
 </script>
