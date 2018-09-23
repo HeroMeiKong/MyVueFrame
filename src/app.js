@@ -53,8 +53,7 @@ new Vue({
             this.$toast(`你的智商为${parseInt(Math.random()*100)}`, {
                 position,
                 enableHtml: false,
-                autoClose: false,
-                autoCloseDelay: 3,
+                autoClose: 3,
                 closeButton: {
                     text: '关闭',
                     callback(toast){

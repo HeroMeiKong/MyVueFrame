@@ -17,12 +17,11 @@
         name: 'SoulWalkerToast',
         props: {
             autoClose: {
-                type: Boolean,
-                default: true
-            },
-            autoCloseDelay: {
-                type: Number,
-                default: 3
+                type: [Boolean, Number],
+                default: 3,
+                validator(value) {
+                    return value === false || typeof value === 'number';
+                }
             },
             closeButton: {
                 type: Object,
@@ -91,22 +90,25 @@
         0% {opacity: 0; transform: translateY(100%)}
         100% {opacity: 1; transform: translateY(0)}
     }
+
     @keyframes slide-down {
         0% {opacity: 0; transform: translateY(-100%)}
         100% {opacity: 1; transform: translateY(0)}
     }
+
     @keyframes fade-in {
         0% {opacity: 0;}
         100% {opacity: 1;}
     }
-    .wrapper{
+
+    .wrapper {
         position: fixed;
         left: 50%;
         transform: translateX(-50%);
         $animation-duration: 300ms;
         &.position-top {
             top: 0;
-            .toast{
+            .toast {
                 border-top-left-radius: 0;
                 border-top-right-radius: 0;
                 animation: slide-down $animation-duration;
@@ -115,19 +117,20 @@
         &.position-middle {
             top: 50%;
             transform: translate(-50%, -50%);
-            .toast{
+            .toast {
                 animation: fade-in $animation-duration;
             }
         }
         &.position-bottom {
             bottom: 0;
-            .toast{
+            .toast {
                 border-bottom-left-radius: 0;
                 border-bottom-right-radius: 0;
                 animation: slide-up $animation-duration;
             }
         }
     }
+
     .toast {
         display: flex;
         align-items: center;
