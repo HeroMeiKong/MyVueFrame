@@ -34,11 +34,12 @@
 </head>
 <body>
 <div id="app" style="padding: 10px;margin: 50px;">
-    <g-collapse selected="1">
+    <g-collapse :selected.sync="selectedTab" single>
         <g-collapse-item title="title1" name="1">gg</g-collapse-item>
         <g-collapse-item title="title2" name="2">ss</g-collapse-item>
         <g-collapse-item title="title3" name="3">dd</g-collapse-item>
     </g-collapse>
+    {{selectedTab}}
     <!--<g-popover position="top">
         <template slot="content" slot-scope="{close}">
             <div>内容<g-button @click="close">关闭</g-button></div>
