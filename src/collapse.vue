@@ -6,25 +6,30 @@
 
 <script>
     import Vue from 'vue'
+
     export default {
         name: "SoulWalkerCollapse",
         props: {
-            single:{
-                type:Boolean,
+            single: {
+                type: Boolean,
                 default: false
+            },
+            selected: {
+                type: String
             }
         },
-        data(){
-            return{
+        data() {
+            return {
                 eventBus: new Vue()
             }
         },
-        provide(){
-            if(this.single){
-                return{
-                    eventBus: this.eventBus
-                }
+        provide() {
+            return {
+                eventBus: this.eventBus
             }
+        },
+        mounted() {
+            this.eventBus.$emit('update:selected', this.selected)
         }
     }
 </script>
@@ -32,7 +37,7 @@
 <style scoped lang="scss">
     $border-color: #ddd;
     $border-radius: 4px;
-    .collapse{
+    .collapse {
         border: 1px solid $border-color;
         border-radius: $border-radius;
     }
