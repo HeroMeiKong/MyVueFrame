@@ -35,8 +35,8 @@
 <body>
 <div id="app" style="padding: 10px;margin: 50px;">
     <g-popover position="top">
-        <template slot="content">
-            <div>内容</div>
+        <template slot="content" slot-scope="{close}">
+            <div>内容<g-button @click="close">关闭</g-button></div>
         </template>
         <g-button>显示</g-button>
     </g-popover>
