@@ -12,9 +12,6 @@
 <script>
     export default {
         name: "SoulWalkerPopover",
-        data() {
-            return {visible: false}
-        },
         props: {
             position: {
                 type: String,
@@ -29,7 +26,10 @@
                 validator(value) {
                     return ['click', 'hover'].indexOf(value) >= 0
                 }
-            }
+            },
+        },
+        data() {
+            return {visible: false}
         },
         mounted() {
             if(this.trigger==='click'){
@@ -139,7 +139,7 @@
         &.position-top {
             transform: translateY(-100%);
             margin-top: -10px;
-            &::before, &::after {left: 10px;}
+            &::before, &::after {left: 10px;border-bottom:none;}
             &::before {
                 border-top-color: $border-color;
                 top: 100%;
@@ -151,7 +151,7 @@
         }
         &.position-bottom {
             margin-top: 10px;
-            &::before, &::after {left: 10px;}
+            &::before, &::after {left: 10px;border-top:none;}
             &::before {
                 border-bottom-color: $border-color;
                 bottom: 100%;
@@ -167,6 +167,7 @@
             &::before, &::after {
                 transform: translateY(-50%);
                 top: 50%;
+                border-right:none;
             }
             &::before {
                 border-left-color: $border-color;
@@ -182,6 +183,7 @@
             &::before, &::after {
                 transform: translateY(-50%);
                 top: 50%;
+                border-left:none;
             }
             &::before {
                 border-right-color: $border-color;
