@@ -34,7 +34,12 @@
 </head>
 <body>
 <div id="app" style="padding: 10px;margin: 50px;">
-    <g-popover position="top">
+    <g-collapse>
+        <g-collapse-item title="title1">gg</g-collapse-item>
+        <g-collapse-item title="title2">ss</g-collapse-item>
+        <g-collapse-item title="title3">dd</g-collapse-item>
+    </g-collapse>
+    <!--<g-popover position="top">
         <template slot="content" slot-scope="{close}">
             <div>内容<g-button @click="close">关闭</g-button></div>
         </template>
@@ -81,7 +86,7 @@
             <div>内容</div>
         </template>
         <g-button>显示</g-button>
-    </g-popover>
+    </g-popover>-->
     <!--<g-tabs :selected.sync="selectedTab">
         <g-tabs-head>
             <template slot="actions">
