@@ -1,9 +1,6 @@
 <template>
     <div class="col" :class="colClasses" :style="colStyle">
-        <div style="border: 1px solid red;">
-            <slot></slot>
-        </div>
-
+        <slot></slot>
     </div>
 </template>
 <script>
@@ -34,16 +31,10 @@
         methods: {
             createClasses(obj, str = '') {
                 //str=== sm-||md-
-                if (!obj) {
-                    return []
-                }
+                if (!obj) { return [] }
                 let array = []
-                if (obj.span) {
-                    array.push(`col-${str}${obj.span}`)
-                }
-                if (obj.offset) {
-                    array.push(`offset-${str}${obj.offset}`)
-                }
+                if (obj.span) { array.push(`col-${str}${obj.span}`) }
+                if (obj.offset) { array.push(`offset-${str}${obj.offset}`) }
                 return array
             }
         },

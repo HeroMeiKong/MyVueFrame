@@ -1,18 +1,14 @@
 <template>
     <div>
-        <div class="box">
-            <g-input value="HeroMeiKong" disabled></g-input>
-            <g-input value="SoulWalker" readonly></g-input>
-            <g-input value="SoulWalker"></g-input>
-        </div>
+        <h2>双向绑定</h2>
+        <p>
+            <strong>预览</strong>
+        </p>
         <div class="box"  id="inputApp">
             <g-input v-model="message"></g-input><p>{{message}}</p>
         </div>
-        <div class="box">
-            <g-input value="SoulWalker" error="姓名不能少于2个字"></g-input>
-        </div>
 
-
+        <p>代码</p>
         <pre>
             <code>{{content}}</code>
         </pre>
@@ -30,16 +26,8 @@
                 message: 'SoulWalker',
                 content: `
 <div>
-    <g-input value="HeroMeiKong" disabled></g-input>
-    <g-input value="SoulWalker" readonly></g-input>
-    <g-input value="SoulWalker"></g-input>
-</div>
-<div>
     <g-input v-model="message"></g-input>
     <p>{{message}}</p>
-</div>
-<div>
-    <g-input value="SoulWalker" error="姓名不能少于2个字"></g-input>
 </div>`
             }
         }

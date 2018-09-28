@@ -1,10 +1,10 @@
 <template>
-    <div class="content">
+    <div class="s-content">
         <slot></slot>
     </div>
 </template>
 <style lang="scss" scoped>
-    .content{
+    .s-content{
         flex-grow: 1;
     }
 </style>

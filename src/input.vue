@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper" :class="{error}">
+    <div class="s-toast" :class="{error}">
         <input :value="value" type="text" :disabled="disabled" :readonly="readonly"
                @change="$emit('change', $event.target.value)"
                @input="$emit('input', $event.target.value)"
@@ -43,7 +43,7 @@
     $font-size: 14px;
     $box-shadow-color: rgba(0, 0, 0, .5);
     $error-color: #F1453D;
-    .wrapper {font-size: $font-size;display: inline-flex;align-items: center;
+    .s-toast {font-size: $font-size;display: inline-flex;align-items: center;
         > :not(:last-child) {margin-right: .5em;}
         > input {
             height: 32px;
