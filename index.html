@@ -23,12 +23,12 @@
 </head>
 <body>
 <div id="app" style="padding: 10px;margin: 50px;">
-    <g-collapse :selected.sync="selectedTab">
+    <!--<g-collapse :selected.sync="selectedTab">
         <g-collapse-item title="title1" name="1">gg</g-collapse-item>
         <g-collapse-item title="title2" name="2">ss</g-collapse-item>
         <g-collapse-item title="title3" name="3">dd</g-collapse-item>
     </g-collapse>
-    {{selectedTab}}
+    {{selectedTab}}-->
     <!--<g-popover position="top">
         <template slot="content" slot-scope="{close}">
             <div>内容<g-button @click="close">关闭</g-button></div>
@@ -126,7 +126,7 @@
             <div class="demo"></div>
         </g-col>
     </g-row>-->
-    <!--<div style="border: 1px solid red;">
+    <!--<div>
         <g-row gutter="20">
             <g-col span="12"
                    :sm="{span:10}"
@@ -143,66 +143,38 @@
                    :xl="{span:20}"
                    :xxl="{span:22}">s</g-col>
         </g-row>
-    </div>
-    <g-row gutter="20">
-        <g-col>s</g-col>
-        <g-col>s</g-col>
-    </g-row>
-    <g-row gutter="20">
-        <g-col>s</g-col>
-        <g-col>s</g-col>
-        <g-col>s</g-col>
-    </g-row>
-    <g-row gutter="20">
-        <g-col>s</g-col>
-        <g-col>s</g-col>
-        <g-col>s</g-col>
-        <g-col>s</g-col>
-    </g-row>
-    <g-row gutter="20">
-        <g-col span="2">s</g-col>
-        <g-col span="22">s</g-col>
-    </g-row>
-    <g-row gutter="20">
-        <g-col span="2">s</g-col>
-        <g-col span="20" offset="2">s</g-col>
-    </g-row>
-    <g-row gutter="20">
-        <g-col span="2">s</g-col>
-        <g-col span="10" offset="2">s</g-col>
-        <g-col span="8" offset="2">s</g-col>
-    </g-row>
-    <div class="box">
-        <g-input value="HeroMeiKong" disabled></g-input>
-        <g-input value="SoulWalker" readonly></g-input>
-        <g-input value="SoulWalker"></g-input>
-    </div>
-    <div class="box">
-        <g-input v-model="message"></g-input>
-        <p>{{message}}</p>
-    </div>
-    <div class="box">
-        <g-input value="SoulWalker" @change="inputChange"></g-input>
-    </div>
-    <div class="box">
-        <g-input value="SoulWalker" error="姓名不能少于2个字"></g-input>
     </div>-->
-    <g-button :loading="loading1" @click="loading1=!loading1">
-        按钮
-    </g-button>
-    <g-button icon="set" :loading="loading2" @click="loading2=!loading2">
-        按钮
-    </g-button>
-    <g-button icon="next" icon-position="right" :loading="loading3" @click="loading3=!loading3">
-        按钮
-    </g-button>
-    <g-icon name="download"></g-icon>
-    <g-button-group>
-        <g-button icon="before">上一页</g-button>
-        <g-button>more</g-button>
-        <g-button icon="next" icon-position="right">下一页</g-button>
-    </g-button-group>
-    <div id="test"></div>
+    <g-row gutter="10">
+        <g-col>s</g-col>
+        <g-col>s</g-col>
+        <g-col>s</g-col>
+    </g-row>
+    <g-row gutter="20">
+        <g-col>s</g-col>
+        <g-col>s</g-col>
+        <g-col>s</g-col>
+    </g-row>
+    <g-row gutter="30">
+        <g-col>s</g-col>
+        <g-col>s</g-col>
+        <g-col>s</g-col>
+    </g-row>
+    <g-row>
+        <g-col span="2">s</g-col>
+        <g-col span="20">s</g-col>
+        <g-col span="2">s</g-col>
+    </g-row>
+    <g-row gutter="20">
+        <g-col span="2">s</g-col>
+        <g-col span="20">s</g-col>
+        <g-col span="2">s</g-col>
+    </g-row>
+    <g-row gutter="20">
+        <g-col span="2">s</g-col>
+        <g-col span="18" offset="2">s</g-col>
+        <g-col span="2">s</g-col>
+    </g-row>
+
 </div>
 <script src="./src/app.js"></script>
 </body>

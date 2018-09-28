@@ -48,4 +48,5 @@
             justify-content: center;
         }
     }
+
 </style>
