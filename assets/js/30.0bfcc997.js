@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[30],{320:function(t,n,s){"use strict";s.r(n);var e=s(1),i=Object(e.a)({},function(){var t=this.$createElement,n=this._self._c||t;return n("div",{staticClass:"content"},[n("p",[this._v("#Tabs-标签\n"),n("ClientOnly",[n("tabs-demo")],1)],1)])},[],!1,null,null,null);i.options.__file="tabs.md";n.default=i.exports}}]);
