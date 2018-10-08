@@ -1,4 +1,11 @@
 ---
 title: 安装
 ---
-#install
+npm安装：
+```
+npm install soulwalker
+```
+yarn安装：
+```
+yarn add soulwalker
+```
